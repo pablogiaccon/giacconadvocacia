@@ -78,11 +78,8 @@ export const Container = styled.div`
       align-items: center;
 
       img {
-        border: 3px solid #fff;
-        border-radius: 6px;
         max-width: 800px;
         max-height: 800px;
-        box-shadow: 5px 10px 5px #414141;
       }
     }
   }

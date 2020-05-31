@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   height: 56px;
@@ -8,13 +8,10 @@ export const Container = styled.div`
   border-radius: 5px;
   box-shadow: 5px 10px 8px #414141;
   color: #ccc;
-  transition: transform 0.2s;
-  transition: box-shadow 0.5s;
 
-  &:hover {
-    transform: translateX(5px);
-    box-shadow: 5px 10px 8px #c57e14;
-  }
+  ${(props) => props.isFocused && css`
+    border-color: #c57e14;
+  `}
 
   input {
     width: 100%;
@@ -27,6 +24,11 @@ export const Container = styled.div`
     &::placeholder {
       color: #ccc;
     }
+  }
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 `;
 

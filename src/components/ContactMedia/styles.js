@@ -8,11 +8,12 @@ export const Container = styled.div`
 
   svg {
     margin: 0 10px;
+    padding: 2px;
     border-radius: 7px;
     transition: box-shadow transform 0.3s;
 
     &:hover {
-      box-shadow: 6px 4px 5px #ffa500;
+      box-shadow: 0 0 5px #c57e14;
       transform: translateY(2px);
     }
   }

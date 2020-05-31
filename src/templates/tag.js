@@ -6,8 +6,8 @@ import Posts from '../components/Posts';
 import SEO from '../components/SEO';
 
 
-export default ({ data, pathContext, location }) => {
-  const { tag } = pathContext;
+export default ({ data, pageContext, location }) => {
+  const { tag } = pageContext;
   const { pathname } = location;
   return (
     <Layout>

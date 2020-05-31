@@ -6,6 +6,7 @@ import favicon from '../../assets/icon.png';
 
 import Header from '../Header';
 import Footer from '../Footer';
+import GlobalStyle from '../../styles/global';
 
 function Layout({ children, title }) {
   return (
@@ -18,6 +19,7 @@ function Layout({ children, title }) {
       <main role="main">
         {children}
       </main>
+      <GlobalStyle />
       <Footer />
     </>
   );

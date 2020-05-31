@@ -12,9 +12,6 @@ export const AboutOffice = styled.div`
 
   img {
     width: 50%;
-    opacity: 70%;
-    border-radius: 10px;
-    box-shadow: 5px 5px 8px #414141;
   }
 
   p {

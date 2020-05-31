@@ -11,7 +11,7 @@ const Footer = () => (
   <Container>
     <div className="content">
       <div className="address">
-        <span className="title">{config.title}</span>
+        <span className="title">{config.siteTitle}</span>
         <span className="addressOffice">{config.address}</span>
       </div>
       <div className="contact">

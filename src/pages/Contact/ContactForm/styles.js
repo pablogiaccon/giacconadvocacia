@@ -24,32 +24,6 @@ export const Container = styled.div`
       }
     }
 
-    textarea {
-      height: 200px;
-      width: 650px;
-      max-width: 650px;
-      max-height: 200px;
-      background: #414141;
-      border: 3px solid #414141;
-      border-radius: 5px;
-      box-shadow: 5px 10px 8px #414141;
-      margin: 20px auto;
-      padding-top: 15px;
-      padding-left: 15px;
-      color: #ccc;
-      transition: transform 0.2s;
-      transition: box-shadow 0.5s;
-
-      &:hover {
-        transform: translateX(5px);
-        box-shadow: 5px 10px 8px #c57e14;
-      }
-
-      &::placeholder {
-        color: #ccc;
-      }
-    }
-
     button {
       width: 70%;
       height: 56px;
@@ -80,10 +54,6 @@ export const Container = styled.div`
           margin-top: 15px;
         }
       }
-      textarea {
-        max-width: 300px;
-      }
-
       button {
         width: 90%;
       }

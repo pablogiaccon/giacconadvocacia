@@ -9,8 +9,7 @@ import {
 
 import Layout from '../../components/Layout';
 
-
-import Img1 from '../../assets/OccupationArea1.jpg';
+import Img1 from '../../assets/OccupationArea1.svg';
 import Img2 from '../../assets/OccupationArea2.svg';
 import Img3 from '../../assets/OccupationArea3.svg';
 import Img4 from '../../assets/OccupationArea4.svg';
@@ -22,7 +21,7 @@ const OccupationArea = () => (
     <Container>
 
       <AboutOffice>
-        <img src={Img1} alt="teste" />
+        <img src={Img1} alt="Office" />
         <p>
           Nosso escritório atua com exclusividade para o setor imobiliário. Em
           um mercado saturado de advogados generalistas, atuantes em todas as
