@@ -225,6 +225,11 @@ export const Container = styled.div`
 
       .two {
         transform: translateY(0);
+
+        &:hover {
+          transform: translateX(5px);
+          box-shadow: 5px 10px 8px #c57e14;
+        }
       }
 
       span {

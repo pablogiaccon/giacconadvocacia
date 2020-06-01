@@ -36,19 +36,19 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">HOME</Link>
+              <Link to="/" onClick={handleOpenMenu}>HOME</Link>
             </li>
             <li>
-              <Link to="/OccupationArea">ÁREA DE ATUAÇÃO</Link>
+              <Link to="/OccupationArea" onClick={handleOpenMenu}>ÁREA DE ATUAÇÃO</Link>
             </li>
             <li>
-              <Link to="/Blog">BLOG</Link>
+              <Link to="/Blog" onClick={handleOpenMenu}>BLOG</Link>
             </li>
             <li>
-              <Link to="/About">SOBRE MIM</Link>
+              <Link to="/About" onClick={handleOpenMenu}>SOBRE MIM</Link>
             </li>
             <li>
-              <Link to="/Contact">CONTATO</Link>
+              <Link to="/Contact" onClick={handleOpenMenu}>CONTATO</Link>
             </li>
           </ul>
         </nav>
