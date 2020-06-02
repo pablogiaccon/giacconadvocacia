@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'gatsby';
 
 import { Container } from './styles';
@@ -14,6 +14,11 @@ const Header = () => {
     menuSection[0].classList.toggle('on', show);
     setShow(!show);
   }
+
+  const handleCloseMenuByNav = useCallback(() => {
+    document.body.style.overflow = 'initial';
+  }, []);
+
   return (
     <Container>
       <header>
@@ -36,19 +41,19 @@ const Header = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/" onClick={handleOpenMenu}>HOME</Link>
+              <Link to="/" onClick={handleCloseMenuByNav}>HOME</Link>
             </li>
             <li>
-              <Link to="/OccupationArea" onClick={handleOpenMenu}>ÁREA DE ATUAÇÃO</Link>
+              <Link to="/OccupationArea" onClick={handleCloseMenuByNav}>ÁREA DE ATUAÇÃO</Link>
             </li>
             <li>
-              <Link to="/Blog" onClick={handleOpenMenu}>BLOG</Link>
+              <Link to="/Blog" onClick={handleCloseMenuByNav}>BLOG</Link>
             </li>
             <li>
-              <Link to="/About" onClick={handleOpenMenu}>SOBRE MIM</Link>
+              <Link to="/About" onClick={handleCloseMenuByNav}>SOBRE MIM</Link>
             </li>
             <li>
-              <Link to="/Contact" onClick={handleOpenMenu}>CONTATO</Link>
+              <Link to="/Contact" onClick={handleCloseMenuByNav}>CONTATO</Link>
             </li>
           </ul>
         </nav>
