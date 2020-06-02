@@ -16,6 +16,11 @@ const Header = () => {
   }
 
   const handleCloseMenuByNav = useCallback(() => {
+    const menuSection = document.getElementsByClassName('menu-section');
+    if (menuSection[0].classList.contains('on')) {
+      menuSection[0].classList.toggle('on');
+      setShow(true);
+    }
     document.body.style.overflow = 'initial';
   }, []);
 
