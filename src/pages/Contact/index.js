@@ -3,9 +3,9 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 import Layout from '../../components/Layout';
 
-import ContactForm from './ContactForm';
+import ContactForm from '../../components/ContactForm';
 import ContactMedia from '../../components/ContactMedia';
-import Map from './Map';
+import Map from '../../components/Map';
 
 import {
   Container, MapContainer, WhereWeAre, FindUs,

@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
-import Input from '../../../components/Input';
-import Textarea from '../../../components/Textarea';
+import Input from '../Input';
+import Textarea from '../Textarea';
 
 import { Container, Title } from './styles';
 

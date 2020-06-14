@@ -1,33 +1,67 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 import _ from 'lodash';
 
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
+import {
+  Container, Tag, Content, Text,
+} from './post-styles';
+
 export default (props) => {
   const { data } = props;
-  const { fields } = data.markdownRemark;
+  const { fields, timeToRead, html } = data.markdownRemark;
   const { slug } = fields;
   const {
-    title, tags, date, description,
+    title, tags, date, description, featuredImage,
   } = data.markdownRemark.frontmatter;
-  const { html } = data.markdownRemark;
 
+  console.log(slug);
   return (
     <Layout>
-      <div style={{
-        backgroundColor: '#FFF', width: '100%', padding: '1.5rem', borderRadius: '0.50rem', margin: '10px 15px',
-      }}
-      >
+      <Container>
         <SEO title={title} url={slug} description={description} article />
-        <h2 style={{ fontSize: '22px', fontWeight: 'bold' }}>{title}</h2>
-        <p>{tags.map((tag) => <Link style={{ color: '#000', marginRight: '10px' }} key={tag} to={`/tag/${_.kebabCase(tag)}`}>{tag}</Link>)}</p>
-        <p>{date}</p>
-        <div className="content">
-          <p dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
-      </div>
+
+
+        <Content>
+          <ul className="tags">
+            {tags.map((tag) => (
+              <Link key={tag} to={`/tag/${_.kebabCase(tag)}`}>
+                <Tag>
+                  {tag}
+                </Tag>
+              </Link>
+            ))}
+          </ul>
+
+          <h1>{title}</h1>
+
+          <p className="description">
+            {description}
+          </p>
+
+          <div className="info">
+            <span>Publicado em: {date}</span>
+            <span>
+              {timeToRead} min de leitura
+            </span>
+          </div>
+
+          {featuredImage && (
+            <Img
+              className="image-post"
+              fluid={featuredImage.childImageSharp.fluid}
+            />
+          )}
+
+          <Text>
+            <p dangerouslySetInnerHTML={{ __html: html }} />
+          </Text>
+        </Content>
+
+      </Container>
     </Layout>
   );
 };
@@ -43,6 +77,13 @@ export const pageQuery = graphql`
         date(formatString: "DD/MM/YYYY")
         tags
         description
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       fields {
         slug

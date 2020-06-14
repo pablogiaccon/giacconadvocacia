@@ -52,13 +52,13 @@ const Header = () => {
               <Link to="/OccupationArea" onClick={handleCloseMenuByNav}>ÁREA DE ATUAÇÃO</Link>
             </li>
             <li>
-              <Link to="/Blog" onClick={handleCloseMenuByNav}>BLOG</Link>
-            </li>
-            <li>
               <Link to="/About" onClick={handleCloseMenuByNav}>SOBRE MIM</Link>
             </li>
             <li>
               <Link to="/Contact" onClick={handleCloseMenuByNav}>CONTATO</Link>
+            </li>
+            <li>
+              <Link to="/Blog" onClick={handleCloseMenuByNav}>BLOG</Link>
             </li>
           </ul>
         </nav>

@@ -2,17 +2,28 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../../components/Layout';
-import Posts from '../../components/Posts';
 import SEO from '../../components/SEO';
+import PostItem from '../../components/Posts/PostItem';
 
-// import { Container } from './styles';
+
+import { Container } from './styles';
 
 function blog({ data }) {
+  const { edges } = data.allMarkdownRemark;
+
+  const posts = (
+    edges.map(({ node }) => (
+      <PostItem to={node.fields.slug} key={node.fields.slug} node={node} />
+    ))
+  );
+
   return (
     <>
       <SEO />
       <Layout>
-        <Posts data={data} />
+        <Container>
+          {posts}
+        </Container>
       </Layout>
     </>
   );
@@ -38,6 +49,13 @@ export const pageQuery = graphql`
             tags
             date(formatString: "DD/MM/YYYY")
             description
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

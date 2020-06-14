@@ -9,8 +9,12 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   body{
-    background: #f0f0f5;
+    background: #EEEEEE;
     -webkit-font-smoothing: antialiased;
   }
 

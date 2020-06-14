@@ -1,39 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
-  margin: 50px auto;
-`;
-
-export const Title = styled.span`
-  font-size: 50px;
-  color: #414141;
-  text-shadow: 5px 10px 8px #414141;
-  margin-bottom: 40px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  div {
-    border-bottom: 3px solid #414141;
-    width: 120%;
-    box-shadow: 5px 10px 8px #414141;
-  }
-
-  @media (max-width: 670px) {
-    font-size: 30px;
-  }
-
-  @media (max-width: 410px) {
-    font-size: 20px;
-  }
-`;
-
-export const PostContainer = styled.div`
+export const PostContainer = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,12 +12,12 @@ export const PostContainer = styled.div`
   background: #fff;
   box-shadow: 5px 10px 8px #414141;
 
-  max-width: 80%;
+  width: 80%;
   max-height: max-content;
 
   cursor: pointer;
 
-  transition: transform 0.2s;
+  transition: transform 0.4s;
 
   &:hover {
     transform: translateX(10px);
@@ -57,20 +25,24 @@ export const PostContainer = styled.div`
   }
 
   .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 
-    img {
-      flex: 1;
-      width: 90%;
+
+    .image-post {
+      padding: 0 16px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 300px;
+      vertical-align: middle;
     }
 
     .description {
+      padding: 0 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      flex: 1;
+      width: 100%;
 
       color: #414141;
 
@@ -79,6 +51,20 @@ export const PostContainer = styled.div`
         font-weight: bold;
         margin-bottom: 25px;
         text-align: center;
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 4px 12px;
+
+        font-size: 14px;
+        margin-bottom: 12px;
+        span + span {
+          margin-left: 12px;
+        }
       }
 
       .text {
@@ -125,12 +111,13 @@ export const PostContainer = styled.div`
 
   @media (max-width: 860px) {
     & .content {
+      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
       .description {
-        margin-bottom: 20px;
+        margin: 20px 0 20px;
       }
     }
 

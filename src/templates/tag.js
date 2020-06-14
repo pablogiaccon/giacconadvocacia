@@ -1,24 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
-import Posts from '../components/Posts';
-import SEO from '../components/SEO';
+import Blog from '../pages/Blog';
 
-
-export default ({ data, pageContext, location }) => {
-  const { tag } = pageContext;
-  const { pathname } = location;
-  return (
-    <Layout>
-      <div>
-        <SEO title={`Tag: ${tag}`} description={`Todos os posts marcados com a tag "${tag}" no CodeStack Brasil`} url={pathname} />
-        <h2 style={{ fontSize: '22px', padding: '0px 15px' }}>Todos os posts com a tag: {tag}</h2>
-        <Posts data={data} />
-      </div>
-    </Layout>
-  );
-};
+export default ({ data }) => (
+  <Blog data={data} />
+);
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
@@ -32,10 +19,19 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          timeToRead
           frontmatter {
             title
+            tags
             date(formatString: "DD/MM/YYYY")
             description
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

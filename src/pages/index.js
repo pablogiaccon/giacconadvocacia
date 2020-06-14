@@ -3,8 +3,8 @@ import { AiOutlineEye, AiOutlineStar } from 'react-icons/ai';
 import { GiTargetArrows } from 'react-icons/gi';
 
 import Layout from '../components/Layout';
-import LastPost from './Blog/LastPosts';
-import ContactForm from './Contact/ContactForm';
+import LastPost from '../components/Posts/LastPosts';
+import ContactForm from '../components/ContactForm';
 
 import ImgPrincipal from '../assets/imgHomePrincipal.jpg';
 import ImgSecund from '../assets/city.jpg';
