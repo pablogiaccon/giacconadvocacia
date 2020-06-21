@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 import { AiOutlineEye, AiOutlineStar } from 'react-icons/ai';
 import { GiTargetArrows } from 'react-icons/gi';
 
@@ -34,7 +35,7 @@ export default function Home() {
               Melhor colocação que o termo de compromisso não há, para expressar a
               beleza desta profissão, desta forma, o transcrevo
             </span>
-            <button type="button">Fale Comigo</button>
+            <button type="button" onClick={() => navigate('Contact')}>Fale Comigo</button>
           </div>
           <section className="imgDescription">
             <img src={ImgShirley} alt="Shirley Carolina Giaccon" width="80%" />

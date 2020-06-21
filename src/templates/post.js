@@ -22,7 +22,13 @@ export default (props) => {
   return (
     <Layout>
       <Container>
-        <SEO title={title} url={slug} description={description} article />
+        <SEO
+          title={title}
+          url={slug}
+          description={description}
+          article
+          image={featuredImage.childImageSharp.fluid}
+        />
 
 
         <Content>

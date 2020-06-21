@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { graphql } from 'gatsby';
 
 import Layout from '../../components/Layout';
@@ -6,22 +6,48 @@ import SEO from '../../components/SEO';
 import PostItem from '../../components/Posts/PostItem';
 
 
-import { Container } from './styles';
+import {
+  Container, ThemePost, SectionThemePost, Title,
+} from './styles';
 
 function blog({ data }) {
+  const [typePost, setTypePost] = useState('');
   const { edges } = data.allMarkdownRemark;
 
-  const posts = (
-    edges.map(({ node }) => (
-      <PostItem to={node.fields.slug} key={node.fields.slug} node={node} />
-    ))
-  );
+  const posts = useMemo(() => (
+    typePost === '' ? (
+      edges.map(({ node }) => (
+        <PostItem to={node.fields.slug} key={node.fields.slug} node={node} />
+      ))
+    ) : (
+      edges.map(({ node }) => (
+        node.frontmatter.category === typePost && (
+          <PostItem to={node.fields.slug} key={node.fields.slug} node={node} />
+        )
+      ))
+    )), [typePost]);
+
+  // console.log(edges);
 
   return (
     <>
       <SEO />
       <Layout>
         <Container>
+
+          <SectionThemePost>
+            <ThemePost onClick={() => setTypePost('Contratos')}>Contratos</ThemePost>
+            <ThemePost onClick={() => setTypePost('Incorporações Imobiliárias')}>Incorporações Imobiliárias</ThemePost>
+            <ThemePost onClick={() => setTypePost('Contruções')}>Construções</ThemePost>
+            <ThemePost onClick={() => setTypePost('Condomínios')}>Condomínios</ThemePost>
+            <ThemePost onClick={() => setTypePost('Outros')}>Outros</ThemePost>
+            <ThemePost onClick={() => setTypePost('')}>Todos</ThemePost>
+          </SectionThemePost>
+
+          <Title>
+            ÚLTIMAS POSTAGENS
+          </Title>
+          {console.log(posts)}
           {posts}
         </Container>
       </Layout>
@@ -49,6 +75,7 @@ export const pageQuery = graphql`
             tags
             date(formatString: "DD/MM/YYYY")
             description
+            category
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 800) {

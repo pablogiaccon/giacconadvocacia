@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet';
 import config from '../../../config/metadata';
 
 export default ({
-  title, description, url, article,
+  title, description, url, article, image,
 }) => {
   const seo = {
     title: title ? `${title} | ${config.siteTitle}` : config.siteTitle,
     description: description || config.siteDescription,
-    image: config.siteImage,
+    image: image || config.siteImage,
     url: url ? `${config.siteUrl}${url}` : '',
   };
 
