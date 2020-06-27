@@ -1,10 +1,10 @@
 ---
-title: 'Suspensão do contrato de locação em tempos de pandemia!'
-date: '2020-05-28'
-featuredImage: ./image-header.png
-description: 'É possível suspender o pagamento da locação em razão do Covid-19?'
+title: Suspensão do contrato de locação em tempos de pandemia!
+date: 2020-05-28
+description: É possível suspender o pagamento da locação em razão do Covid-19?s
+featuredpost: true
 draft: false
-category: Contratos
+featuredImage: ./image-header.png
 tags:
   - Inquilino
   - Locador
@@ -15,6 +15,7 @@ tags:
   - Contrato Imobiliário
   - Direito Imobiliário
   - Direito Civil
+category: Contratos
 ---
 
 ### I - INTRODUÇÃO:
