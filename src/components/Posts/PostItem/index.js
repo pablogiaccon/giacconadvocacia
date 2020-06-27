@@ -6,8 +6,8 @@ import { PostContainer } from './styles';
 const PostItem = ({ node }) => (
   <PostContainer to={node.fields.slug} key={node.fields.slug}>
     <div className="content">
-      {node.frontmatter.featuredImage
-                  && (<Img className="image-post" fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
+      {node.frontmatter.featuredimage
+                  && (<Img className="image-post" fluid={node.frontmatter.featuredimage.childImageSharp.fluid} />
                   )}
       <div className="description">
         <p className="title">{node.frontmatter.title}</p>

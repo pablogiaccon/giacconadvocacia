@@ -15,7 +15,7 @@ export default (props) => {
   const { fields, timeToRead, html } = data.markdownRemark;
   const { slug } = fields;
   const {
-    title, tags, date, description, featuredImage,
+    title, tags, date, description, featuredimage,
   } = data.markdownRemark.frontmatter;
 
   console.log(slug);
@@ -27,7 +27,7 @@ export default (props) => {
           url={slug}
           description={description}
           article
-          image={featuredImage.childImageSharp.fluid}
+          image={featuredimage.childImageSharp.fluid}
         />
 
 
@@ -55,10 +55,10 @@ export default (props) => {
             </span>
           </div>
 
-          {featuredImage && (
+          {featuredimage && (
             <Img
               className="image-post"
-              fluid={featuredImage.childImageSharp.fluid}
+              fluid={featuredimage.childImageSharp.fluid}
             />
           )}
 
@@ -83,7 +83,7 @@ export const pageQuery = graphql`
         date(formatString: "DD/MM/YYYY")
         tags
         description
-        featuredImage {
+        featuredimage {
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid

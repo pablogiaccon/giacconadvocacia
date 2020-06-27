@@ -76,7 +76,7 @@ export const pageQuery = graphql`
             date(formatString: "DD/MM/YYYY")
             description
             category
-            featuredImage {
+            featuredimage {
               childImageSharp {
                 fluid(maxWidth: 800) {
                   ...GatsbyImageSharpFluid

@@ -25,7 +25,7 @@ const LastPosts = () => (
               tags
               date(formatString: "DD/MM/YYYY")
               description
-              featuredImage {
+              featuredimage {
                 childImageSharp {
                   fluid(maxWidth: 800) {
                     ...GatsbyImageSharpFluid
