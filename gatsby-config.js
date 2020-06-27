@@ -21,6 +21,14 @@ module.exports = {
       },
     },
     {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/posts/images`,
+        name: 'uploads',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-nprogress',
       options: {
         // Setting a color is optional.
