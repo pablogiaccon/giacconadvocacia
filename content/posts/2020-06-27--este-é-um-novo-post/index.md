@@ -4,7 +4,7 @@ title: Este é um novo Post
 date: 2020-06-26T15:57:24.449Z
 description: Teste do novo Post
 featuredpost: true
-draft: true
+draft: false
 featuredImage: image-1.png
 tags:
   - Post1
