@@ -3,9 +3,12 @@ import { graphql } from 'gatsby';
 
 import Blog from '../pages/Blog';
 
-export default ({ data }) => (
-  <Blog data={data} />
-);
+export default ({ data, pathContext }) => {
+  const { tag } = pathContext;
+  return (
+    <Blog data={data} tag={tag} />
+  );
+};
 
 export const pageQuery = graphql`
   query TagPage($tag: String) {
@@ -23,6 +26,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            category
             date(formatString: "DD/MM/YYYY")
             description
             featuredImage {

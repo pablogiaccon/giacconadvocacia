@@ -10,7 +10,7 @@ import {
   Container, ThemePost, SectionThemePost, Title,
 } from './styles';
 
-function blog({ data }) {
+function blog({ data, tag }) {
   const [typePost, setTypePost] = useState('');
   const { edges } = data.allMarkdownRemark;
 
@@ -45,7 +45,7 @@ function blog({ data }) {
           </SectionThemePost>
 
           <Title>
-            ÚLTIMAS POSTAGENS
+            ÚLTIMAS POSTAGENS {tag && `COM A TAG ${tag.toUpperCase()}`}
           </Title>
           {console.log(posts)}
           {posts}

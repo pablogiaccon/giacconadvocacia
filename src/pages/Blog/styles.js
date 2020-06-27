@@ -52,6 +52,7 @@ export const Title = styled.span`
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 
   @media (max-width: 670px) {
     font-size: 30px;
