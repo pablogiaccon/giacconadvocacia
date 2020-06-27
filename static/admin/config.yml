@@ -26,11 +26,11 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
+      - {label: "Category", name: "category", widget: "string"}
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Esboço", name: "draft", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredImage", widget: image}
+      - {label: "Esboço", name: "draft", widget: "boolean", default: false}
+      - {label: "Image", name: "featuredImage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
-# This line should *not* be indented
-publish_mode: editorial_workflow
+

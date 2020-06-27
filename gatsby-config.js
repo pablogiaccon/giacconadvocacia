@@ -11,7 +11,19 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-netlify-cms',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: config.siteTitle,
+        short_name: config.siteTitleShort,
+        start_url: '/',
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'standalone',
+        icon: 'src/assets/icon.png', // 512x512
+      },
+    },
+
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -65,18 +77,7 @@ module.exports = {
         trackingId: config.googleAnalyticsID,
       },
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.siteTitle,
-        short_name: config.siteTitleShort,
-        start_url: '/',
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'standalone',
-        icon: 'src/assets/icon.png', // 512x512
-      },
-    },
+
     {
       resolve: 'gatsby-plugin-feed',
       options: {
@@ -149,6 +150,13 @@ module.exports = {
         ignore: ['**/styles.js'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-netlify-cms',
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    'gatsby-plugin-netlify',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-offline',
   ],
