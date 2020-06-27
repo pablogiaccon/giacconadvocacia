@@ -1,7 +1,7 @@
 ---
 title: Suspensão do contrato de locação em tempos de pandemia!
-date: 2020-05-28
-description: É possível suspender o pagamento da locação em razão do Covid-19?s
+date: 2020-05-28T00:00:00.000Z
+description: É possível suspender o pagamento da locação em razão do Covid-19?
 featuredpost: true
 draft: false
 featuredImage: ./image-header.png
